@@ -1,0 +1,725 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Product Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#ececec;
+      color:#111;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 28px;
+      background:#111;
+      color:#fff;
+      border-radius:12px;
+      transition:.3s;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      opacity:.9;
+    }
+
+    /* Header */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,.7);
+      border-bottom:1px solid rgba(0,0,0,.08);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.6rem;
+      font-weight:700;
+      color:#111;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      color:#333;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:#000;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:2rem;
+      cursor:pointer;
+    }
+
+    /* Hero */
+
+    .hero{
+      padding:90px 0;
+    }
+
+    .hero-wrapper{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero-text h1{
+      font-size:3.8rem;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      color:#555;
+      margin-bottom:30px;
+      font-size:1.05rem;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .secondary-btn{
+      background:#fff;
+      color:#111;
+      border:1px solid #ddd;
+    }
+
+    .hero-image{
+      background:#fff;
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    /* Stats */
+
+    .stats{
+      padding-bottom:80px;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .stat-card{
+      background:#fff;
+      padding:30px;
+      border-radius:24px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,.05);
+    }
+
+    .stat-card h2{
+      font-size:2rem;
+      margin-bottom:8px;
+    }
+
+    .stat-card p{
+      color:#666;
+    }
+
+    /* Features */
+
+    .features{
+      padding:80px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.5rem;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+    }
+
+    .feature-card{
+      background:#fff;
+      padding:35px;
+      border-radius:28px;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+      transition:.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .feature-icon{
+      width:60px;
+      height:60px;
+      background:#ececec;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.5rem;
+      margin-bottom:20px;
+    }
+
+    .feature-card h3{
+      margin-bottom:12px;
+    }
+
+    .feature-card p{
+      color:#666;
+      font-size:.95rem;
+    }
+
+    /* Showcase */
+
+    .showcase{
+      padding:80px 0;
+    }
+
+    .showcase-wrapper{
+      background:#fff;
+      border-radius:35px;
+      padding:60px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:50px;
+      align-items:center;
+      box-shadow:0 5px 25px rgba(0,0,0,.05);
+    }
+
+    .showcase-text h2{
+      font-size:2.7rem;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .showcase-text p{
+      color:#666;
+      margin-bottom:25px;
+    }
+
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      margin-bottom:30px;
+    }
+
+    .list div{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:500;
+    }
+
+    /* Testimonials */
+
+    .testimonials{
+      padding:80px 0;
+    }
+
+    .testimonial-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+    }
+
+    .testimonial-card{
+      background:#fff;
+      padding:30px;
+      border-radius:28px;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .testimonial-card p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    .user{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .user img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .user h4{
+      font-size:1rem;
+    }
+
+    .user span{
+      font-size:.9rem;
+      color:#777;
+    }
+
+    /* Pricing */
+
+    .pricing{
+      padding:80px 0;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+    }
+
+    .price-card{
+      background:#fff;
+      padding:40px 30px;
+      border-radius:30px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .price-card.active{
+      transform:scale(1.04);
+      border:2px solid #111;
+    }
+
+    .price-card h3{
+      margin-bottom:10px;
+    }
+
+    .price{
+      font-size:3rem;
+      font-weight:700;
+      margin:20px 0;
+    }
+
+    .price-card ul{
+      list-style:none;
+      margin:25px 0;
+    }
+
+    .price-card ul li{
+      margin:12px 0;
+      color:#555;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:80px 0;
+    }
+
+    .cta-box{
+      background:#111;
+      color:#fff;
+      border-radius:35px;
+      padding:70px 40px;
+      text-align:center;
+    }
+
+    .cta-box h2{
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .cta-box p{
+      max-width:700px;
+      margin:auto;
+      opacity:.8;
+      margin-bottom:30px;
+    }
+
+    .cta-box .btn{
+      background:#fff;
+      color:#111;
+    }
+
+    /* Footer */
+
+    footer{
+      padding:40px 0;
+      text-align:center;
+      color:#555;
+    }
+
+    /* Responsive */
+
+    @media(max-width:992px){
+      .hero-wrapper,
+      .showcase-wrapper,
+      .feature-grid,
+      .testimonial-grid,
+      .pricing-grid,
+      .stats-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .hero-text h1{
+        font-size:3rem;
+      }
+    }
+
+    @media(max-width:768px){
+      .menu-btn{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        padding:25px;
+        display:none;
+        border-bottom:1px solid #eee;
+      }
+
+      .nav-links.active{
+        display:flex;
+      }
+
+      .hero-wrapper,
+      .showcase-wrapper,
+      .feature-grid,
+      .testimonial-grid,
+      .pricing-grid,
+      .stats-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text{
+        text-align:center;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-text h1,
+      .showcase-text h2,
+      .cta-box h2{
+        font-size:2.2rem;
+      }
+
+      .showcase-wrapper{
+        padding:35px;
+      }
+    }
+  </style></head>
+<body>  <!-- Header -->  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">Nexora</a><div class="nav-links" id="navLinks">
+      <a href="#features">Features</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+  </nav>
+</div>
+
+  </header>  <!-- Hero -->  <section class="hero">
+    <div class="container">
+      <div class="hero-wrapper"><div class="hero-text">
+      <h1>Modern Product Landing Page Design</h1>
+
+      <p>
+        Build a premium product experience with a clean responsive landing page.
+        Perfect for startups, SaaS products, AI tools, and online businesses.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn">Get Started</a>
+        <a href="#features" class="btn secondary-btn">Explore Features</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="Product Image">
+    </div>
+
+  </div>
+</div>
+
+  </section>  <!-- Stats -->  <section class="stats">
+    <div class="container">
+      <div class="stats-grid"><div class="stat-card">
+      <h2>10K+</h2>
+      <p>Happy Users</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>99%</h2>
+      <p>Customer Satisfaction</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>24/7</h2>
+      <p>Live Support</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>5★</h2>
+      <p>Average Rating</p>
+    </div>
+
+  </div>
+</div>
+
+  </section>  <!-- Features -->  <section class="features" id="features">
+    <div class="container"><div class="section-title">
+    <h2>Premium Features</h2>
+    <p>Everything you need for a professional product website.</p>
+  </div>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Fast Performance</h3>
+      <p>Optimized clean code for ultra fast loading speed and smooth user experience.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Mobile Responsive</h3>
+      <p>Perfect responsive layout for desktop tablet and mobile devices.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎨</div>
+      <h3>Modern UI Design</h3>
+      <p>Elegant clean interface with soft shadows rounded cards and premium feel.</p>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- Showcase -->  <section class="showcase">
+    <div class="container"><div class="showcase-wrapper">
+
+    <div class="showcase-image">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Dashboard">
+    </div>
+
+    <div class="showcase-text">
+      <h2>Beautiful Dashboard Experience</h2>
+
+      <p>
+        Create stunning product experiences with modern UI components and responsive layouts.
+      </p>
+
+      <div class="list">
+        <div>✔ Clean Modern Layout</div>
+        <div>✔ SEO Friendly Structure</div>
+        <div>✔ Easy To Customize</div>
+        <div>✔ Smooth Animation Effects</div>
+      </div>
+
+      <a href="#" class="btn">Learn More</a>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- Testimonials -->  <section class="testimonials" id="reviews">
+    <div class="container"><div class="section-title">
+    <h2>What Clients Say</h2>
+    <p>Trusted by creators startups and businesses worldwide.</p>
+  </div>
+
+  <div class="testimonial-grid">
+
+    <div class="testimonial-card">
+      <p>
+        “This landing page design looks modern clean and super professional.”
+      </p>
+
+      <div class="user">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+
+        <div>
+          <h4>David Miller</h4>
+          <span>UI Designer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Perfect responsive layout and very smooth performance on mobile devices.”
+      </p>
+
+      <div class="user">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+
+        <div>
+          <h4>Sarah Khan</h4>
+          <span>Startup Founder</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p>
+        “Beautiful structure and clean sections helped improve our conversion rate.”
+      </p>
+
+      <div class="user">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="User">
+
+        <div>
+          <h4>James Carter</h4>
+          <span>Developer</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- Pricing -->  <section class="pricing" id="pricing">
+    <div class="container"><div class="section-title">
+    <h2>Simple Pricing</h2>
+    <p>Choose the perfect plan for your business.</p>
+  </div>
+
+  <div class="pricing-grid">
+
+    <div class="price-card">
+      <h3>Starter</h3>
+      <div class="price">$19</div>
+
+      <ul>
+        <li>1 Landing Page</li>
+        <li>Responsive Design</li>
+        <li>Email Support</li>
+      </ul>
+
+      <a href="#" class="btn">Choose Plan</a>
+    </div>
+
+    <div class="price-card active">
+      <h3>Professional</h3>
+      <div class="price">$49</div>
+
+      <ul>
+        <li>Premium UI Design</li>
+        <li>SEO Optimization</li>
+        <li>Priority Support</li>
+      </ul>
+
+      <a href="#" class="btn">Get Started</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Enterprise</h3>
+      <div class="price">$99</div>
+
+      <ul>
+        <li>Custom Features</li>
+        <li>Full Optimization</li>
+        <li>24/7 Support</li>
+      </ul>
+
+      <a href="#" class="btn">Contact Us</a>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <!-- CTA -->  <section class="cta" id="contact">
+    <div class="container"><div class="cta-box">
+    <h2>Start Building Your Product Website Today</h2>
+
+    <p>
+      Launch a beautiful premium landing page with clean design responsive layout and modern user experience.
+    </p>
+
+    <a href="#" class="btn">Create Website</a>
+  </div>
+
+</div>
+
+  </section>  <!-- Footer -->  <footer>
+    <div class="container">
+      <p>© 2026 Nexora. All Rights Reserved.</p>
+    </div>
+  </footer>  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script></body>
+</html>
